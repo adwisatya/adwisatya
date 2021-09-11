@@ -1,0 +1,27 @@
+swagger: "2.0"
+info:
+  description: "This is a swagger for dev.aryya.id related project. Use it wisely and as is."
+  version: "1.0.0"
+  title: "dev.aryya.id Swagger"
+  contact:
+    email: "contactme@aryya.id"
+host: "us-central1-zeta-structure-296509.cloudfunctions.net"
+basePath: "/"
+schemes:
+- "https"
+paths:
+  /product2cve:
+    get:
+      summary: "Get cve by package name"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "package"
+        in: "query"
+        description: "Package name for cve checking. It can be package:version format (openssl:1.0.1e),full rpm format (openssl-1.0.1e-60.el7.1.x86_64.rpm),or full deb format (openssl_1.1.0l-1~deb9u3_amd64.deb)"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "successful operation"
